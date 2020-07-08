@@ -4,5 +4,10 @@ include/
 lib/
 lib64/
 share/
+<<<<<<< HEAD
 Scripts/
 pyvenv.cfg
+=======
+pyvenv.cfg
+_config.yml
+>>>>>>> 2ec4248bcfde793e49347cd23383fb6bf26deaed
