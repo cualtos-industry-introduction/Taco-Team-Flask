@@ -6,5 +6,5 @@ lib/
 Lib/
 lib64/
 share/
+Scripts/
 pyvenv.cfg
-_config.yml
