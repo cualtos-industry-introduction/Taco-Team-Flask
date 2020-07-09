@@ -11,12 +11,11 @@
   <title>Directorio - Flask</title>
 
   <!-- Bootstrap core CSS -->
-  
   <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="{{ url_for('static', filename='simple-sidebar.css') }}" rel="stylesheet">
-  
+
 </head>
 
 <body>
@@ -30,7 +29,7 @@
         <a href="#" class="list-group-item list-group-item-action bg-light">Inicio</a>
         <a href="{{url_for ('agregar') }}" class="list-group-item list-group-item-action bg-light">Agregar</a>
         <a href="{{url_for ('buscar') }}" class="list-group-item list-group-item-action bg-light">Buscar</a>
-        
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -41,7 +40,8 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Ocultar Menú</button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -50,17 +50,48 @@
             <li class="nav-item active">
               <a class="nav-link">Directorio <span class="sr-only">(current)</span></a>
             </li>
-            
-            
+
+
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
         <h1 class="mt-4">Directorio en Flask Python</h1>
-        <p>En base al código que has estado trabajando a lo largo del curso, en equipo, convierte la apliación agenda simple a una aplicación web, aloja los cambios en un nuevo repositorio</p>
+        <p>Con base en el código que has estado trabajando a lo largo del curso, en equipo, convierte la apliación
+          agenda
+          simple a una aplicación web, aloja los cambios en un nuevo repositorio</p>
         <!--<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>-->
       </div>
+
+      <!-- Tabla de contactos -->
+      <div class="container-fluid">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Empresa</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contacto in contactos %}
+            <tr>
+              <th scope="row">{{ loop.index }}</th>
+              <td>{{ contacto.nombre }}</td>
+              <td>{{ contacto.empresa }}</td>
+              <td>{{ contacto.correo }}</td>
+              <td>{{ contacto.telefono }}</td>
+              <td>{{ contacto.nota }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -71,11 +102,11 @@
   <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
 
-  
+
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
