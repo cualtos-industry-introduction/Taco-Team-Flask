@@ -65,34 +65,6 @@
         <!--<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>-->
       </div>
 
-      <!-- Tabla de contactos -->
-      <div class="container-fluid">
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Empresa</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col">Nota</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for contacto in contactos %}
-            <tr>
-              <th scope="row">{{ loop.index }}</th>
-              <td>{{ contacto.nombre }}</td>
-              <td>{{ contacto.empresa }}</td>
-              <td>{{ contacto.correo }}</td>
-              <td>{{ contacto.telefono }}</td>
-              <td>{{ contacto.nota }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-
     </div>
     <!-- /#page-content-wrapper -->
 
