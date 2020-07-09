@@ -11,12 +11,12 @@
   <title>Directorio - Flask</title>
 
   <!-- Bootstrap core CSS -->
-  
+
   <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="{{ url_for('static', filename='simple-sidebar.css') }}" rel="stylesheet">
-  
+
 </head>
 
 <body>
@@ -28,9 +28,10 @@
       <div class="sidebar-heading">Directorio </div>
       <div class="list-group list-group-flush">
         <a href="{{url_for ('index') }}" class="list-group-item list-group-item-action bg-light">Inicio</a>
+        <a href="{{url_for ('mostrar_agenda') }}" class="list-group-item list-group-item-action bg-light">Mostrar</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Agregar</a>
         <a href="{{url_for ('buscar') }}" class="list-group-item list-group-item-action bg-light">Buscar</a>
-        
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -41,39 +42,63 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Ocultar Menú</button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" >Directorio <span class="sr-only">(current)</span></a>
+              <a class="nav-link">Directorio <span class="sr-only">(current)</span></a>
             </li>
-            
-            
+
+
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Agregar</h1>
+        <h1 class="mt-4">Agregar contacto nuevo</h1>
 
-        <p>
-          <form method="POST">
-            Nombre <input type="text" name="entrada" id="nombre" required></br></br>
-            Empresa <input type="text" name="entrada" id="empresa" required> </br></br>
-            Correo <input type="email" name="entrada" id="correo" required> </br></br>
-            Teléfono <input type="text" name="entrada" id="telefono" required> </br></br>
-            Nota <textarea name="entrada" id="nota" required></textarea></textarea> </br></br>
-            
-          
-          </br></br>
-          <button type="submit" class="btn btn-primary" id="menu-toggle">Enviar</button>
-          
-          </form>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <form method="POST">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Juanito Pérez">
+                </div>
 
-        </p>
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input type="text" class="form-control" id="empresa" placeholder="Organización Mundial">
+                </div>
+
+                <div class="form-group">
+                  <label for="correo">Correo electrónico</label>
+                  <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
+                    placeholder="ejemplo.org">
+                  <small id="emailHelp" class="form-text text-muted">Nunca se compartirá el correo con alguien
+                    más.</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="text" class="form-control" id="telefono" placeholder="378 111 2020">
+                </div>
+
+                <div class="form-group">
+                  <label for="nota">Nota</label>
+                  <textarea class="form-control" id="nota" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
 
 
         <!--<p>En base al código que has estado trabajando a lo largo del curso, en equipo, convierte la apliación agenda simple a una aplicación web, aloja los cambios en un nuevo repositorio</p>-->
@@ -89,11 +114,11 @@
   <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
 
-  
+
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
