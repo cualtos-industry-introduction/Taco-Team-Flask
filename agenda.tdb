@@ -1,5 +1,5 @@
-{"nombre": "juanp", "empresa": "ds", "correo": "ds", "telefono": "", "nota": "dd"}
-{"nombre": "juanp", "empresa": "", "correo": "C:/Users/Obdulia/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Obdulia/proyecto/Taco-Team/agendaPrincipal.py", "telefono": "", "nota": "d"}
-{"nombre": "juanax", "empresa": "fdfd", "correo": "sfdsf", "telefono": "", "nota": "fd"}
-{"nombre": "juanperez", "empresa": "xx", "correo": "xx", "telefono": "", "nota": "xx", "teleono": "xx"}
-{"nombre": "pedrox", "empresa": "xx", "correo": "xx", "telefono": "", "nota": "xx", "teleono": "xx"}
+{"nombre": "Juan", "empresa": "U. de G.", "correo": "juanito@udg.mx", "telefono": "378456785", "nota": ""}
+{"nombre": "Juana", "empresa": "Organizacion", "correo": "juanita@example.com", "telefono": "4561413232", "nota": "Amiga escuela"}
+{"nombre": "Maria", "empresa": "Patito", "correo": "feo@patito.org", "telefono": "8181531212", "nota": ""}
+{"nombre": "Paco", "empresa": "Anonima", "correo": "anonymous@xyz.com", "telefono": "????", "nota": "xx"}
+{"nombre": "Pedro", "empresa": "Familiar", "correo": "pedro@familia.xyz", "telefono": "4831562123", "nota": "Contacto de Juan"}
