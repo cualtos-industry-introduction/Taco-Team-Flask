@@ -22,6 +22,11 @@ def buscar():
     return render_template('buscar.html')
 
  
-
+@app.route('/agenda/mostrar')
+def mostrar_agenda():
+    agenda = Agenda('agenda')
+    contactos = agenda.obtenerContactos()
+    return render_template('mostrar_agenda.html', contactos=contactos)
+    
 if __name__ == "__main__":
     app.run()
