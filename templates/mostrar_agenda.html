@@ -60,9 +60,9 @@
       <div class="container-fluid">
         <h1 class="mt-4">Muestra todos los contactos</h1>
         <p>Lista de los datos a mostrar</p>
-           <div>{{ datos }}
-            {% for elemento in Lista %}
-                Valor: {{ elemento}}
+           <div>
+            {% for elemento in contactos %}
+                <ol> {{ elemento}} </ol>
                 {% endfor %}
             </div> 
         
