@@ -1,3 +1,5 @@
+from agenda import Agenda
+from contacto import Contacto
 from flask import Flask, render_template, request
 import json
 
@@ -22,7 +24,7 @@ def buscar():
     return render_template('buscar.html')
 
  
-@app.route('/agenda/mostrar')
+@app.route('/mostrar')
 def mostrar_agenda():
     agenda = Agenda('agenda')
     contactos = agenda.obtenerContactos()
