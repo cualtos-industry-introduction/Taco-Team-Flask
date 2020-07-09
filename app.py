@@ -1,10 +1,9 @@
 from agenda import Agenda
 from contacto import Contacto
 from flask import Flask, render_template, request
-from agenda import Agenda
-from contacto import Contacto
 from jinja2 import Template
 import json
+from consultas import obtenerTodo, obtenerUno, insertarUno
 
 app = Flask(__name__)
 
@@ -25,8 +24,9 @@ def buscar():
  
 @app.route('/mostrar')
 def mostrar_agenda():
-    agenda = Agenda('agenda')
-    contactos = agenda.obtenerContactos()
+    #agenda = Agenda('agenda')
+    #contactos = agenda.obtenerContactos()
+    contactos = obtenerTodo()
     return render_template('mostrar.html', contactos=contactos)
     
 if __name__ == "__main__":
