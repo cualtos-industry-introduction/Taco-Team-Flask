@@ -25,21 +25,12 @@ def agregar():
 @app.route('/buscar')
 def buscar():
     return render_template('buscar.html')
-
-<<<<<<< HEAD
-#@app.route('/agenda/mostrar')
-#def mostrar_agenda():
-#    agenda = Agenda('agenda')
-#    contactos = agenda.obtenerContactos()
-#    return render_template('mostrar_agenda.html', contactos=contactos)
-=======
  
 @app.route('/mostrar')
 def mostrar_agenda():
     agenda = Agenda('agenda')
     contactos = agenda.obtenerContactos()
     return render_template('mostrar_agenda.html', contactos=contactos)
->>>>>>> 6946b2699e7789bc5fb76bb5528178431efe4f8b
     
 if __name__ == "__main__":
     app.run()
