@@ -2,9 +2,9 @@ from pymongo import MongoClient
 
 cliente = MongoClient('localhost', 27017)
 #client = MongoClient('mongodb://localhost:27017/')
-db = cliente['ejemplo']
+db = cliente['agenda']
 #db = cliente.ejemplo
-coleccion = db.tabla1
+coleccion = db.contactos
 
 # Operaciones Mongo
 def obtenerTodo():
