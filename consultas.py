@@ -13,7 +13,7 @@ def obtenerTodo():
 
 def obtenerUno(titulo):
     # resultado = coleccion.find_one({'nombre': titulo})
-    resultado = coleccion.find({'nombre': {'$regex':'.*titulo.*'}})
+    resultado = coleccion.find({'nombre': {'$regex':'.*'+titulo+'.*', "$options" :'i'}})
     return list(resultado)
 
 def insertarUno(datos):

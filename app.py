@@ -40,9 +40,10 @@ def buscar():
 
 @app.route('/buscar/<nombre>')
 def buscar_resultado(nombre):
-    contactos = [obtenerUno(nombre)]
-    if contactos[0] != None:
-        return render_template('mostrar.html', contactos=contactos, titulo="Búsqueda: "+contactos[0]['nombre'])
+    contactos = obtenerUno(nombre)
+    print(contactos)
+    if contactos:
+        return render_template('mostrar.html', contactos=contactos, titulo="Búsqueda: "+nombre)
     else:
         return render_template('mostrar.html', contactos=contactos, titulo="Búsqueda: Sin registros")
     
