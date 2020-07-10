@@ -37,8 +37,8 @@ def buscar():
 
 @app.route('/buscar/<nombre>')
 def buscar_resultado(nombre):
-    resultado = obtenerUno(nombre)
-    return render_template('buscarres.html', resultado=resultado)
+    contactos = list(obtenerUno(nombre))
+    return render_template('mostrar.html', contactos=contactos)
  
 @app.route('/mostrar')
 def mostrar_agenda():
