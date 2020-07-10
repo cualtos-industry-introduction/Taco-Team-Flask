@@ -31,21 +31,27 @@ def agregar():
 @app.route('/buscar', methods=['GET', 'POST'])
 def buscar():
     if request.method == 'POST':
-        return redirect(url_for('buscar_resultado', nombre=request.form['nombre']))
+        if request.form['nombre'] == '':
+            return render_template('buscar.html')
+        else:
+            return redirect(url_for('buscar_resultado', nombre=request.form['nombre']))
     elif request.method == 'GET':
         return render_template('buscar.html')
 
 @app.route('/buscar/<nombre>')
 def buscar_resultado(nombre):
-    contactos = list(obtenerUno(nombre))
-    return render_template('mostrar.html', contactos=contactos)
- 
+    contactos = [obtenerUno(nombre)]
+    if contactos[0] != None:
+        return render_template('mostrar.html', contactos=contactos, titulo="Búsqueda: "+contactos[0]['nombre'])
+    else:
+        return render_template('mostrar.html', contactos=contactos, titulo="Búsqueda: Sin registros")
+    
 @app.route('/mostrar')
 def mostrar_agenda():
     #agenda = Agenda('agenda')
     #contactos = agenda.obtenerContactos()
     contactos = obtenerTodo()
-    return render_template('mostrar.html', contactos=contactos)
+    return render_template('mostrar.html', contactos=contactos, titulo="Mostrar todos los contactos", busqueda=None)
     
 if __name__ == "__main__":
     app.run()

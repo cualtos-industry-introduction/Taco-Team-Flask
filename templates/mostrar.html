@@ -28,7 +28,7 @@
       <div class="sidebar-heading">Directorio </div>
       <div class="list-group list-group-flush">
         <a href="{{url_for ('index') }}" class="list-group-item list-group-item-action bg-light">Inicio</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Mostrar</a>
+        <a href="{{url_for ('mostrar_agenda') }}" class="list-group-item list-group-item-action bg-light">Mostrar</a>
         <a href="{{url_for ('agregar') }}" class="list-group-item list-group-item-action bg-light">Agregar</a>
         <a href="{{url_for ('buscar') }}" class="list-group-item list-group-item-action bg-light">Buscar</a>
 
@@ -59,11 +59,11 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Muestra todos los contactos</h1>
-        <p>Lista de los datos a mostrar</p>
-        
+        <h1 class="mt-4">{{titulo}}</h1>
+
         <!-- Tabla de contactos -->
         <div class="container-fluid">
+          {% if contactos[0] != None: %}
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
@@ -88,11 +88,14 @@
               {% endfor %}
             </tbody>
           </table>
+          {% endif %}
         </div>
+        {% if busqueda != None %}
+        <a href="{{ url_for('buscar') }}"><button class="btn btn-primary">Regresar</button></a>
+        {% endif %}
       </div>
     </div>
     <!-- /#page-content-wrapper -->
-
   </div>
   <!-- /#wrapper -->
 

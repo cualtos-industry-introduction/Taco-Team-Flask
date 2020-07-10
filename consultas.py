@@ -12,8 +12,9 @@ def obtenerTodo():
     return list(cursor)
 
 def obtenerUno(titulo):
-    resultado = coleccion.find_one({'nombre': titulo})
-    return resultado
+    # resultado = coleccion.find_one({'nombre': titulo})
+    resultado = coleccion.find({'nombre': {'$regex':'.*titulo.*'}})
+    return list(resultado)
 
 def insertarUno(datos):
     id = coleccion.insert_one(datos)
